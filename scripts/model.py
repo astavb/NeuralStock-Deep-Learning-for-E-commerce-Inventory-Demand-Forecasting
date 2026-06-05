@@ -10,12 +10,13 @@ class LSTMModel(nn.Module):
 
         self.lstm = nn.LSTM(
             input_size=input_size,
-            hidden_size=64,
+            hidden_size=128,
             num_layers=2,
+            
             batch_first=True
         )
 
-        self.fc = nn.Linear(64, 1)
+        self.fc = nn.Linear(128, 1)
 
     def forward(self, x):
 
